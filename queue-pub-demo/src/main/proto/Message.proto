@@ -1,0 +1,19 @@
+syntax = "proto3";
+package message;
+
+option java_multiple_files = true;
+option java_package = "com.example.pub";
+
+message MessageRequest {
+  string body = 1;
+  string header = 2;
+  string priority = 3;
+}
+
+message MessageResponse {
+  string response = 1;
+}
+
+service MessageService {
+  rpc SendMessageMethod(MessageRequest) returns (MessageResponse);
+}
